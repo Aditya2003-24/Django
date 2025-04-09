@@ -20,4 +20,10 @@ def ragi(request):
 def log(request):
     return render(request,'login.html')
 
+def register(request):
+    print('register page')
+    print(request.method)
+    print(request.POST)
+    print(request.FILES)
+
 
