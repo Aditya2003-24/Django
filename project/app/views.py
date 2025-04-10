@@ -25,5 +25,17 @@ def register(request):
     print(request.method)
     print(request.POST)
     print(request.FILES)
-
+    username=request.POST.get('username')
+    email=request.POST.get('email')
+    detail=request.POST.get('detail')
+    phone=request.POST.get('phone')
+    dob=request.POST.get('dob')
+    subscribe=request.POST.getlist('subscribe')
+    gender=request.POST.get('gender')
+    password=request.POST.get('password')
+    cpassword=request.POST.get('cpassword')
+    profile=request.FILES.get('profile-pic')
+    resume=request.FILES.get('resume')
+    print(username,email,detail,phone,dob,subscribe,gender,password,cpassword,profile,resume)
+      
 
