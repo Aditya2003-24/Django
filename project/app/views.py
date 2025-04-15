@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Student
 
 # Create your views here.
 
@@ -37,5 +38,6 @@ def register(request):
     profile=request.FILES.get('profile-pic')
     resume=request.FILES.get('resume')
     print(username,email,detail,phone,dob,subscribe,gender,password,cpassword,profile,resume)
+    Student.objects.create(Student_name=username,Student_email=email,Student_contact=phone,Student_description=detail,Student_DOB=dob,Student_Education=subscribe,Student_Gender=gender,Student_Image=profile,Student_Resume=resume,Student_Password=password )
       
 
