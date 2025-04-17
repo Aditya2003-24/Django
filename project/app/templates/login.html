@@ -1,16 +1,21 @@
 {% extends 'base.html' %}
 
-{% block content %}  <div class="login-container">
+{% block content %}
+
+  <div class="login-container">
     <h2>Login</h2>
-    <form action="/login" method="post">
-      <input type="text" name="username" placeholder="Username" required>
-      <input type="password" name="password" placeholder="Password" required>
+    <form action="{% url 'logindata' %}" method="post">
+      {% csrf_token %}
+      <input type="email" name="email" placeholder="Email" value="" required>
+      <input type="password" name="password" placeholder="Password" value="" required>
       <input type="submit" value="Login">
     </form>
-    <p>Don't have an account? <a href="#">Register</a></p>
+    <p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
   </div>
   
-  {% include "home.html" %}
+  {% comment %} {% include "home.html" %} {% endcomment %}
+
+  {{msg}}
   {% endblock %}
 
 {% block title %}login page{% endblock %}

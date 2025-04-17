@@ -2,3 +2,12 @@
     font-size: 500px;
     color: red;
 }
+.fom{
+    text-align: center;
+}
+.fom label{
+    margin: 1%;
+}
+body{
+    background-color: tomato;
+}

@@ -27,4 +27,5 @@ urlpatterns = [
     path('ragi/',views.ragi,name='ragi'),
     path('log/',views.log,name='log'),
     path('register/',views.register,name='register'),
+    path('logindata/',views.logindata,name='logindata')
 ]
