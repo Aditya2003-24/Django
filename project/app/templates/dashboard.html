@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+Wlcome to Dashboard
+
+
+{{userdata.name}}
+<hr>
+{{userdata.id}}
+<hr>
+<img src="{{userdata.image.url}}" alt="" style="width: 200px; height: 300px;">
+<hr>
+<a href="{{userdata.file.url}}" download><button>download</button></a>
+
+{% endblock %}

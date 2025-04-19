@@ -4,10 +4,25 @@ from .models import Student
 # Create your views here.
 
 def home(request):
-    return render(request,'base.html')
-
-def Home1(request):
     return render(request,'landing.html')
+
+
+def home1(request,pk):
+    userdata = Student.objects.get(id=pk)
+    userdta = {
+                    "id":userdata.id,
+                    "name":userdata.Student_name,
+                    "contact":userdata.Student_contact,
+                    "dis":userdata.Student_description,
+                    "dob":userdata.Student_DOB,
+                    "email":userdata.Student_email,
+                    "image":userdata.Student_Image,
+                    "file":userdata.Student_Resume,
+                    "education":userdata.Student_Education,
+                    "password":userdata.Student_Password,
+                }
+    return render(request,'home.html',{'userdata':userdata})
+
 
 def about(request):
     return render(request,'about.html')
@@ -71,7 +86,19 @@ def logindata(request):
             pass1=userdata.Student_Password
             if passw==pass1:
                 msg='welcom to dashbord'
-                return render(request,'base.html',{'userdata':userdata})
+                userdata = {
+                    "id":userdata.id,
+                    "name":userdata.Student_name,
+                    "contact":userdata.Student_contact,
+                    "dis":userdata.Student_description,
+                    "dob":userdata.Student_DOB,
+                    "email":userdata.Student_email,
+                    "image":userdata.Student_Image,
+                    "file":userdata.Student_Resume,
+                    "education":userdata.Student_Education,
+                    "password":userdata.Student_Password,
+                }
+                return render(request,'dashboard.html',{'userdata':userdata})
             else:
                 msg='email & password not match'
                 return render(request,'login.html',{'msg':msg,'email':email})
@@ -80,3 +107,4 @@ def logindata(request):
             return render(request,'login.html',{'msg':msg})
     else:
         return render(request,'login.html')
+    

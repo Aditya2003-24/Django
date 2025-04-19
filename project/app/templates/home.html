@@ -1,29 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Document{% endblock %}</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-    {% block content %}
+{% block content %}
+
+Welcome to home page
+
+{% endblock %}
     
-    <table>
-        <tr>
-            <td>home </td>
-            <td>about </td>
-            <td>contact </td>
-            <td>service </td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-        </tr>
-    </table>
-    {% endblock %}
-    
-</body>
-</html>
